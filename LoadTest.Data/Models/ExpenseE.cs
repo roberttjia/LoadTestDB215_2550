@@ -1,0 +1,18 @@
+using System.ComponentModel.DataAnnotations;
+
+namespace LoadTest.Data.Models
+{
+    public partial class ExpenseE
+    {
+        public int Id { get; set; }
+        public string Name { get; set; } = string.Empty;
+        public string Description { get; set; } = string.Empty;
+        public decimal Amount { get; set; }
+        public DateTime Date { get; set; }
+        public int ExpenseCategoryId { get; set; }
+        public int AccountId { get; set; }
+
+        public virtual ExpenseCategoryE ExpenseCategory { get; set; } = null!;
+        public virtual AccountE Account { get; set; } = null!;
+    }
+}
